@@ -28,4 +28,34 @@ app.listen(80);
 console.log("Web伺服器就緒，開始接受用戶端連線.");
 console.log("「Ctrl + C」可結束伺服器程式.");
 
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+	host : '127.0.0.1',
+	user : 'root',
+	password : 'root',
+    database : 'labDB',
+    port :'8889'
+});
+onnection.connect(function(err) {
+	// if (err) throw err;
+	if (err) {
+		console.log(JSON.stringify(err));
+		return;
+	}
+});
+app.get("/home/news", function (request, response) {
+
+	connection.query('select * from news', 
+		'',
+		function(err, rows) {
+			if (err)	{
+				console.log(JSON.stringify(err));
+				return;
+			}
+			
+			response.send(JSON.stringify(rows));
+		}
+	);
+    
+})
 
