@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method = "post" action = "http://server2020.epizy.com/echo.php">
+        <input type = "hidden" name = "meberId" value = "20">
+        <label for = "username"> your name </label>  
+        <input id = "username" name = "usernameTextBox" type ="text">
+        <br>
+        <input type= "checkbox" id = "autologin" name = "autologin">
+        <label for = "autologin"> auto login </label> 
+        <br>
+        <input type = "radio" name = "city" value = "2" id = "tp">
+        <label for = "tp"> Taipei </label> 
+        <input type = "radio" name = "city" value = "4" id = "tc">
+        <label for = "tc"> Taichung </label>
+        <input type = "radio" name = "city" value = "6" id = "tn">
+        <label for = "tn"> Tainan </label>
+        <labal for = "tn"> TaiNan </labal>
+        <br>
+        <select name = "region">    
+            <option value = "2">taipei</option>
+            <option value = "4">taichung</option>
+            <option value = "6">tainan</option>
+        </select>
+        <br>
+        <input type = "submit" value = "ok">
+    </form>
+</body>
+</html>
